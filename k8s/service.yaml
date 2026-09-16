@@ -3,7 +3,9 @@ kind: Service
 metadata:
   name: eval-fastapi-min
   labels:
-    app: eval-fastapi-min
+    app.kubernetes.io/name: eval-fastapi-min
+    app.kubernetes.io/instance: eval-fastapi-min
+    app.kubernetes.io/part-of: eval-fastapi-min
 spec:
   type: NodePort
   selector:
@@ -11,3 +13,4 @@ spec:
   ports:
   - port: 80
     targetPort: 8000
+    protocol: TCP
